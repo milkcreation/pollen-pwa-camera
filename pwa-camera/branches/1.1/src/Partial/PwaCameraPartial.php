@@ -60,6 +60,6 @@ class PwaCameraPartial extends PartialDriver
      */
     public function viewDirectory(): string
     {
-        return $this->pwaCamera->resources('/views/partial/camera-capture');
+        return $this->pwaCamera->resources('/views/partial/pwa-camera');
     }
 }
