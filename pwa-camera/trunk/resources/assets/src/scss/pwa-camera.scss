@@ -1,0 +1,71 @@
+// Variables
+@import "@pollen-solutions/pwa/resources/src/scss/variables";
+@import "@pollen-solutions/pwa/resources/src/scss/mixins/elements";
+
+// Customization
+.PwaCamera {
+  @include pwa-buttons-styles;
+}
+
+.PwaCamera-playerArea {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-top: 56.25%;
+
+  > video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.PwaCamera-handler {
+  text-align: center;
+  padding:10px;
+}
+
+.PwaCamera-photos {
+  margin: 0 -10px;
+
+  &::before,
+  &:after {
+    display: block;
+    content: " ";
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+.PwaCamera-photo {
+  padding: 10px;
+  float: left;
+  width: 33.333333%;
+}
+
+.PwaCamera-photoItem {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    padding-bottom: 100%;
+    display: block;
+    content: " ";
+  }
+}
+
+.PwaCamera-photoItemImg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  height: auto;
+  min-height: 100%;
+  max-height: none;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+}
