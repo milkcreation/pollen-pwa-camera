@@ -6,14 +6,19 @@ namespace Pollen\PwaCamera;
 
 use Pollen\Partial\PartialManagerInterface;
 use Pollen\PwaCamera\Partial\PwaCameraPartial;
-use Pollen\Container\ServiceProvider;
+use Pollen\Container\BootableServiceProvider;
 
-class PwaCameraServiceProvider extends ServiceProvider
+class PwaCameraServiceProvider extends BootableServiceProvider
 {
     protected $provides = [
         PwaCameraInterface::class,
         PwaCameraPartial::class
     ];
+
+    public function boot(): void
+    {
+        $this->getContainer()->get(PwaCameraInterface::class);
+    }
 
     /**
      * @inheritDoc
